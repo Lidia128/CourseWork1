@@ -33,8 +33,11 @@ public class Main {
         System.out.println();
         System.out.println("Сотрудник " + getEmployeeMin() + " имеет минимальную зарплату");
         System.out.println();
-        System.out.println("Среднее значение зарплат " + midlSumSalary() + " рублей");
-            }
+        int midl = totalSumSalary() / 10;
+        System.out.println("Среднее значение зарплат " + midl + " рублей");
+        System.out.println();
+    }
+
     public static Employee getEmployeeMax() {
         int max = Integer.MIN_VALUE;
         Employee employeeMax = null;
@@ -46,6 +49,7 @@ public class Main {
         }
         return employeeMax;
     }
+
     public static Employee getEmployeeMin() {
         int min = Integer.MAX_VALUE;
         Employee employeeMin = null;
@@ -57,6 +61,7 @@ public class Main {
         }
         return employeeMin;
     }
+
     public static int totalSumSalary() {
         int sum = 0;
         for (Employee employee : employees) {
@@ -66,12 +71,17 @@ public class Main {
         }
         return sum;
     }
-    public static int midlSumSalary() {
-        int midl = 0;
+    public static void getFullName () {
         for (Employee employee : employees) {
-            if (employee != null) {
-                midl = totalSumSalary() / employees.length;
-            }
+            System.out.println (employee.getName() + " " + employee.getSecondName() +
+                    " " + employee.getSurname());
         }
-        return midl;
-    }}
+
+    }
+
+}
+
+
+
+
+
