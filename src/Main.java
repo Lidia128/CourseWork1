@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 public class Main {
 
     public static final Employee[] employees = new Employee[10];
@@ -16,16 +15,11 @@ public class Main {
         employees[7] = new Employee("Наталия", "Николаевна", "Че", 5, 99562);
         employees[8] = new Employee("Александра", "Павловна", "Безродная", 3, 41567);
         employees[9] = new Employee("Алексей", "Антонович", "Бородин", 4, 84215);
-        System.out.println(employees[0]);
-        System.out.println(employees[1]);
-        System.out.println(employees[2]);
-        System.out.println(employees[3]);
-        System.out.println(employees[4]);
-        System.out.println(employees[5]);
-        System.out.println(employees[6]);
-        System.out.println(employees[7]);
-        System.out.println(employees[8]);
-        System.out.println(employees[9]);
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println(employees[i]);
+        }
+        System.out.println();
+        getFullName();
         System.out.println();
         System.out.println("Сумма затрат на зарплаты составляет " + totalSumSalary() + " рублей");
         System.out.println();
@@ -33,8 +27,7 @@ public class Main {
         System.out.println();
         System.out.println("Сотрудник " + getEmployeeMin() + " имеет минимальную зарплату");
         System.out.println();
-        int midl = totalSumSalary() / 10;
-        System.out.println("Среднее значение зарплат " + midl + " рублей");
+        System.out.println("Среднее значение зарплат " + midlSumSalary() + " рублей");
         System.out.println();
     }
 
@@ -71,15 +64,27 @@ public class Main {
         }
         return sum;
     }
-    public static void getFullName () {
+
+    public static int midlSumSalary() {
+        int sum = 0;
+        int counter = 0;
         for (Employee employee : employees) {
-            System.out.println (employee.getName() + " " + employee.getSecondName() +
-                    " " + employee.getSurname());
+            if (employee != null) {
+                sum += totalSumSalary();
+                counter++;
+            }
         }
-
+        return sum / counter;
     }
+    public static void getFullName() {
+        for (Employee employee : employees)
+        System.out.println(employee.getName() + " " + employee.getSecondName() +
+                " " + employee.getSurname());
+    }}
 
-}
+
+
+
 
 
 

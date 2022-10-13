@@ -13,25 +13,37 @@ public class Employee {
         this.surname = surname;
         this.salary = salary;
         this.department = department;
-        this.id = counter ++;
+        this.id = counter++;
     }
 
     public String getName() {
         return this.name;
     }
-    public String getSecondName () { return this.secondName;}
+
+    public String getSecondName() {
+        return this.secondName;
+    }
+
     public String getSurname() {
         return this.surname;
     }
-    public int getSalary() {return salary;}
-    public int getDepartment() {return department;}
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public int getDepartment() {
+        return department;
+    }
 
     public void setSalary(int salary) {
         this.salary = salary;
     }
-    public int getId () {
+
+    public int getId() {
         return id;
     }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -43,7 +55,7 @@ public class Employee {
                 ", id=" + id +
                 '}';
     }
-    }
+}
 
 
 
